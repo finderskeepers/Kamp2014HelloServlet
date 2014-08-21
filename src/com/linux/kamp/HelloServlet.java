@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.linux.kamp.model.User;
 
@@ -20,9 +21,12 @@ public class HelloServlet extends HttpServlet{
 		
 
 		User user = new User();
-		user.setCity("izmir");
 		user.setName("Ozan");
-		user.setId(13);
+		user.setId("13");
+		
+		HttpSession session = request.getSession();
+		
+	    session.setAttribute("user", user);
 		
 		User result = user;
 		request.setAttribute("user", result);

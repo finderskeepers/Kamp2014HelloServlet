@@ -2,9 +2,10 @@ package com.linux.kamp.model;
 
 public class User {
 
+	private String id;
 	private String name;
-	private String city;
-	private long id;
+	private String address;
+	private String password;
 
 	public String getName() {
 		return name;
@@ -14,24 +15,34 @@ public class User {
 		this.name = name;
 	}
 
-	public long getId() {
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
 	}
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", city=" + city + ", id=" + id + "]";
+		return "User [id=" + id + ", name=" + name + ", address=" + address
+				+ ", password=" + password + "]";
 	}
+
 }
